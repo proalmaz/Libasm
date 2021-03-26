@@ -6,7 +6,7 @@
 /*   By: vping <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 18:43:31 by vping             #+#    #+#             */
-/*   Updated: 2021/03/25 21:11:02 by vping            ###   ########.fr       */
+/*   Updated: 2021/03/26 18:38:46 by vping            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ int		main(void)
 	strcpy_test();
 	strcmp_test();
 	write_test();
-	//read_test();
+	read_test();
 	strdup_test();
 	return (0);
 }
