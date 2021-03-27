@@ -3,17 +3,22 @@ global _ft_strcmp
 
 ;rdi = s1, rsi = s2
 _ft_strcmp:
-	mov r8, 0
+	mov 	r10, 0
 
 loop:
-	mov	r9, qword[rdi + r8]		;r9 = s1[o + r8]
-	mov	r10, qword[rsi + r8]		;r10 = s2[o + r8]
-	cmp	r9, r10					;r9 == r10?
+	mov	al, byte[rdi + r10]		;al = s1[o + r8]
+	mov	bl, byte[rsi + r10]		;bl = s2[o + r8]
+	cmp	al, 0					;al == 0?
+	je	exit					;go to exit
+	cmp	bl, 0					;bl == 0?
+	je	exit					;go to exit
+	cmp	al, bl					;al == bl?
 	jne	exit					;if FALSE go to exit
-	inc	r8						;r8++
+	inc	r10						;r8++
 	jmp	loop					;go to loop
 
 exit:
-	sub	r9, r10					;r9 = r9 - r10
-	mov	rax, r9					;rax = r9
+	movzx	rax, al
+	movzx	rbx, bl
+	sub		rax, rbx			;al = al - bl
 	ret
